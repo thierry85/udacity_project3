@@ -13870,13 +13870,13 @@ a = np.array([[ 0.24879643,  0.07032244,  0.12641572,  0.34763842,  0.07893497,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Print out the top five softmax probabilities for the predictions on the German traffic sign images found on the web. </span>
 <span class="c1">### Feel free to use as many code cells as needed.</span>
 <span class="n">softmax_logits</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">logits</span><span class="p">)</span>
-<span class="n">top_k</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">top_k</span><span class="p">(</span><span class="n">softmax_logits</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">top_k</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">top_k</span><span class="p">(</span><span class="n">softmax_logits</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 
 
 <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">sess</span><span class="p">:</span>
@@ -13903,15 +13903,16 @@ a = np.array([[ 0.24879643,  0.07032244,  0.12641572,  0.34763842,  0.07893497,
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>INFO:tensorflow:Restoring parameters from ./lenet
-TopKV2(values=array([[8.7485075e-01, 5.6481052e-02, 3.3786047e-02],
-       [7.8152895e-01, 1.6813441e-01, 2.3740204e-02],
-       [9.9653059e-01, 3.3494101e-03, 1.1899505e-04],
-       [8.3278346e-01, 1.6298267e-01, 2.1991571e-03],
-       [9.9999416e-01, 3.4281118e-06, 2.2110935e-06]], dtype=float32), indices=array([[ 1,  3,  0],
-       [ 1,  2, 29],
-       [22, 29, 25],
-       [27, 11, 25],
-       [13, 14, 12]], dtype=int32))
+TopKV2(values=array([[0.0454905 , 0.04521486, 0.04235949, 0.04015406, 0.03219931],
+       [0.0482639 , 0.04042267, 0.04013796, 0.03708335, 0.03444587],
+       [0.04510674, 0.04238093, 0.04076045, 0.03810098, 0.03183431],
+       [0.048591  , 0.04095723, 0.03891027, 0.03679591, 0.0356693 ],
+       [0.0479866 , 0.04508501, 0.0445606 , 0.03894033, 0.03787225]],
+      dtype=float32), indices=array([[39, 18, 33,  9, 13],
+       [18, 33, 39,  9, 19],
+       [18, 39, 33,  9, 10],
+       [18, 39,  9, 33, 19],
+       [18, 33, 39,  9, 17]], dtype=int32))
 </pre>
 </div>
 </div>

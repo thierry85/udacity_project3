@@ -245,7 +245,7 @@ with tf.Session() as sess:
 
 
 softmax_logits = tf.nn.softmax(logits)
-top_k = tf.nn.top_k(softmax_logits, k=3)
+top_k = tf.nn.top_k(softmax_logits, k=5)
 
 
 with tf.Session() as sess:
